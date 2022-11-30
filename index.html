@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Weather Dashboard</title>
+        <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    
+    </head>
+<body>
+    <nav class="navbar is-white">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item brand-text" href="./index.html">
+          Weather Dashboard
+        </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-10">
+                <section class="hero is-info welcome is-small">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">
+                                Current Weather
+                            </h1>
+                            <h2 id="date-target" class="subtitle">
+                                --/--/-- <span class="icon" id="icon-target"></span>
+                            </h2>
+                        </div>
+                    </div>
+                </section>
+                <section class="box">
+                    <h4 id="city-target" class="title is-5">--</h4>
+                    <ul class="menu-list">
+                        <li><span class="tag is-medium">Temp:</span><span id="temp-target">-- °F </span></li>
+                        <li><span class="tag is-medium">Wind:</span><span id="wind-target">-- mph</span></li>
+                        <li><span class="tag is-medium">Humidity</span><span id="humidity-target">-- %</span></li>
+                        <li><span class="tag is-medium">UV index:</span><span id="UVI-target" class="tag is-primary">--</span></li>
+                    </ul>
+                </section>
+                <section class="tiles">
+                    <div class="tile is-ancestor has-text-centered">
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p id="date-1" class="title">--/--/--</p>
+                                <span id="day1-icon-target" class="tag is-medium mb-5">--</span>
+                                <p class="subtitle">Temp: <span id="Temp-1" >--</span></p>
+                                <p class="subtitle">Wind: <span id="Wind-11" >--</span></p>
+                                <p class="subtitle">Humidity: <span id="Humid-11" >--</span></p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p id="date-2" class="title">--/--/--</p>
+                                <span id="day2-icon-target" class="tag is-small mb-5">--</span>
+                                <p class="subtitle">Temp: <span id="Temp-2" >--</span></p>
+                                <p class="subtitle">Wind: <span id="Wind-2" >--</span></p>
+                                <p class="subtitle">Humidity: <span id="Humid-2" >--</span></p>
+                                
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p id="date-3" class="title">--/--/--</p>
+                                <span id="day3-icon-target" class="tag is-small mb-5">--</span>
+                                <p class="subtitle">Temp: <span id="Temp-3" >--</span></p>
+                                <p class="subtitle">Wind: <span id="Wind-3" >--</span></p>
+                                <p class="subtitle">Humidity: <span id="Humid-3" >--</span></p>
+                                
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p id="date-4" class="title">--/--/--</p>
+                                <span id="day4-icon-target" class="tag is-small mb-5">--</span>
+                                <p class="subtitle">Temp: <span id="Temp-4" >--</span></p>
+                                <p class="subtitle">Wind: <span id="Wind-4" >--</span></p>
+                                <p class="subtitle">Humidity: <span id="Humid-4" >--</span></p>
+                                
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p id="date-5" class="title">--/--/-- </p>
+                                <span id="day5-icon-target" class="tag is-small mb-5">--</span> 
+                                <p class="subtitle">Temp: <span id="Temp-5" >--</span></p>
+                                <p class="subtitle">Wind: <span id="Wind-5" >--</span></p>
+                                <p class="subtitle">Humidity: <span id="Humid-5" >--</span></p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="card events-card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    Previous Searches
+                                </p>
+                            </header>
+                            <div class="card-table">
+                                <div class="content">
+                                    <table id="history-target" class="table is-fullwidth is-striped">
+                                    </table>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    Search by City
+                                </p>
+                            </header>                            
+                            <div class="card-content">
+                                <div class="content">
+                                    <div class="control has-icons-left">
+                                        <input id="search" type="text" placeholder="Search for a city">
+                                        <span class="icon is-small is-right">
+                      <i class="fa fa-search"></i>
+                    </span>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>
