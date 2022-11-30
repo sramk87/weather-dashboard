@@ -15,14 +15,11 @@ function load(){
     }
     else{
         searchHistoryCol()
-    }
-    
+    }  
 }
 
 function searchHistoryCol(){
-
     let oldHistory = searchHistory.reverse()
-
     clearHistory(oldHistory)
 
     for (let i = 0; i < oldHistory.length; i++) { 
@@ -46,11 +43,8 @@ function searchHistoryCol(){
     localStorage.removeItem("searchHistoryArchive")
     localStorage.setItem("searchHistoryArchive",JSON.stringify(revertReverse))
 
-        
 }
 function displayWeather(weatherObj){
-
-
     let dateTarget     = $("#date-target")
     let cityTarget     = $("#city-target")
     let tempTarget     = $("#temp-target")
